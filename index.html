@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hacker-background">
+        <div class="hacker-grid"></div>
+        <div class="hacker-overlay"></div>
+        <div class="hacker-glitch"></div>
+        <div class="dark-reality-bubbles"></div>
+    </div>
+    <div class="matrix-rain"></div>
+    <div class="binary-code-container"></div>
+    <div class="hacker-bubbles"></div>
+    <div class="landing-container">
+        <div class="landing-header">
+            <div class="logo">
+                <img src="ai.png" alt="AI Logo" class="logo-img">
+                <h1><a href="https://www.linkedin.com/in/yogesh-dhangar-956b3a1b5/" target="_blank" class="logo-link">YD Security</a></h1>
+            </div>
+            <p class="tagline">Your Gateway to Cybersecurity Knowledge</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="cyber-btn" onclick="window.location.href='chat.html'">
+                <span class="btn-icon">🤖</span>
+                <span class="btn-text">Cybersecurity Bot</span>
+            </button>
+            <button class="cyber-btn" onclick="window.location.href='guide.html'">
+                <span class="btn-icon">📚</span>
+                <span class="btn-text">Hacking Guide Book</span>
+            </button>
+            <button class="cyber-btn" onclick="window.location.href='challenge.html'">
+                <span class="btn-icon">🎮</span>
+                <span class="btn-text">Security Challenge</span>
+            </button>
+            <button class="cyber-btn" onclick="window.open('Yogesh_Dhangar_CV.pdf.pdf', '_blank')">
+                <span class="btn-icon">📄</span>
+                <span class="btn-text">Connect Me</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        const matrixRain = document.querySelector('.matrix-rain');
+        const canvas = document.createElement('canvas');
+        matrixRain.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        const matrixArray = matrix.split("");
+        const fontSize = 10;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#ff0000";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 33);
+
+        // Binary Code Animation
+        const binaryContainer = document.querySelector('.binary-code-container');
+        for (let i = 0; i < 50; i++) {
+            const binary = document.createElement('div');
+            binary.className = 'binary-code';
+            binary.textContent = Math.random().toString(2).substring(2, 8);
+            binary.style.left = `${Math.random() * 100}%`;
+            binary.style.animationDelay = `${Math.random() * 5}s`;
+            binary.style.color = 'rgba(255, 0, 0, 0.3)';
+            binary.style.textShadow = '0 0 5px rgba(255, 0, 0, 0.5)';
+            binaryContainer.appendChild(binary);
+        }
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Hacker Bubbles Effect
+        const hackerWords = [
+            "HACK", "SECURITY", "PENETRATION", "EXPLOIT", "VULNERABILITY",
+            "FIREWALL", "ENCRYPTION", "DECRYPT", "BACKDOOR", "MALWARE",
+            "RANSOMWARE", "PHISHING", "BRUTEFORCE", "SQL INJECTION", "XSS",
+            "DDOS", "ZERO-DAY", "KEYLOGGER", "ROOTKIT", "SOCIAL ENGINEERING"
+        ];
+
+        const bubblesContainer = document.querySelector('.hacker-bubbles');
+        
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'hacker-bubble';
+            bubble.textContent = hackerWords[Math.floor(Math.random() * hackerWords.length)];
+            
+            // Random position and size
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.top = `${Math.random() * 100}%`;
+            bubble.style.width = `${Math.random() * 100 + 50}px`;
+            bubble.style.height = `${Math.random() * 100 + 50}px`;
+            bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            bubble.style.animationDelay = `${Math.random() * 2}s`;
+            
+            bubblesContainer.appendChild(bubble);
+            
+            // Remove bubble after animation
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        }
+
+        // Create initial bubbles
+        for (let i = 0; i < 10; i++) {
+            createBubble();
+        }
+
+        // Create new bubbles periodically
+        setInterval(createBubble, 2000);
+
+        // Dark Reality Bubbles Effect
+        const darkRealityWords = [
+            "DARK REALITY", "CYBER WAR", "DIGITAL HELL", "NETWORK NIGHTMARE",
+            "DIGITAL DARKNESS", "CYBER APOCALYPSE", "DIGITAL DOOM", "NETWORK NEXUS",
+            "DIGITAL DESTRUCTION", "CYBER CHAOS", "DIGITAL DEATH", "NETWORK NIGHT",
+            "DIGITAL DANGER", "CYBER CRISIS", "DIGITAL DESTINY", "NETWORK NEMESIS"
+        ];
+
+        const darkBubblesContainer = document.querySelector('.dark-reality-bubbles');
+        
+        function createDarkBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'dark-reality-bubble';
+            bubble.textContent = darkRealityWords[Math.floor(Math.random() * darkRealityWords.length)];
+            
+            // Random position and size
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.top = `${Math.random() * 100}%`;
+            bubble.style.width = `${Math.random() * 150 + 100}px`;
+            bubble.style.height = `${Math.random() * 150 + 100}px`;
+            bubble.style.animationDuration = `${Math.random() * 15 + 10}s`;
+            bubble.style.animationDelay = `${Math.random() * 3}s`;
+            
+            darkBubblesContainer.appendChild(bubble);
+            
+            // Remove bubble after animation
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        }
+
+        // Create initial dark bubbles
+        for (let i = 0; i < 8; i++) {
+            createDarkBubble();
+        }
+
+        // Create new dark bubbles periodically
+        setInterval(createDarkBubble, 3000);
+    </script>
+</body>
+</html>

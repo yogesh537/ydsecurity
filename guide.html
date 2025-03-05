@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Guide Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="chat-header">
+            <div class="logo">
+                <img src="ai.png" alt="AI Logo" class="logo-img">
+                <h1>Hacking Guide Book</h1>
+            </div>
+            
+        </header>
+
+        <div class="guide-container">
+            <div class="module-list">
+                <h2>Modules</h2>
+                <div class="module-buttons">
+                    <button class="module-btn" data-module="1">Module 01: Introduction to Ethical Hacking</button>
+                    <button class="module-btn" data-module="2">Module 02: Footprinting and Reconnaissance</button>
+                    <button class="module-btn" data-module="3">Module 03: Scanning Networks</button>
+                    <button class="module-btn" data-module="4">Module 04: Enumeration</button>
+                    <button class="module-btn" data-module="5">Module 05: Vulnerability Analysis</button>
+                    <button class="module-btn" data-module="6">Module 06: System Hacking</button>
+                    <button class="module-btn" data-module="7">Module 07: Malware Threats</button>
+                    <button class="module-btn" data-module="8">Module 08: Sniffing</button>
+                    <button class="module-btn" data-module="9">Module 09: Social Engineering</button>
+                    <button class="module-btn" data-module="10">Module 10: Denial-of-Service</button>
+                    <button class="module-btn" data-module="11">Module 11: Session Hijacking</button>
+                    <button class="module-btn" data-module="12">Module 12: Evading IDS, Firewalls, and Honeypots</button>
+                    <button class="module-btn" data-module="13">Module 13: Hacking Web Servers</button>
+                    <button class="module-btn" data-module="14">Module 14: Hacking Web Applications</button>
+                    <button class="module-btn" data-module="15">Module 15: SQL Injection</button>
+                    <button class="module-btn" data-module="16">Module 16: Hacking Wireless Networks</button>
+                    <button class="module-btn" data-module="17">Module 17: Hacking Mobile Platforms</button>
+                    <button class="module-btn" data-module="18">Module 18: IoT Hacking</button>
+                    <button class="module-btn" data-module="19">Module 19: Cloud Computing</button>
+                    <button class="module-btn" data-module="20">Module 20: Cryptography</button>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="content-header">
+                    <h2 id="module-title">Select a Module</h2>
+                    <div class="content-controls">
+                        <button id="generate-btn" class="cyber-btn">
+                            <span class="btn-icon">⚡</span>
+                            <span class="btn-text">Generate Content</span>
+                        </button>
+                        <button id="save-btn" class="cyber-btn">
+                            <span class="btn-icon">💾</span>
+                            <span class="btn-text">Save Chapter</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-display">
+                    <div class="typing-animation" id="loading-animation">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div id="module-content" class="module-content">
+                        <p class="welcome-text">Select a module from the list to begin learning about ethical hacking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="guide.js"></script>
+</body>
+</html> 

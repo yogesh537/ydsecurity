@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="chat-header">
+            <div class="logo">
+                <img src="ai.png" alt="AI Logo" class="logo-img">
+                <h1>Cybersecurity Bot</h1>
+            </div>
+            <p class="tagline">Your Trusted Cybersecurity Assistant</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="welcome-message ai-chat-box">
+                <img src="ai.png" alt="" id="aiImage" width="10%">
+                <div class="ai-chat-area">
+                    <div class="typing-animation">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="message-content">
+                        Welcome to the Cybersecurity Bot! I'm here to help you with any cybersecurity questions and concerns.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="prompt-area">
+            <div class="input-container">
+                <input type="text" id="prompt" placeholder="Ask me about cybersecurity...">
+                <div class="button-group">
+                    <button id="image" class="upload-btn" title="Upload Screenshot">
+                        <i class="fas fa-image"></i>
+                        <input type="file" accept="image/*" hidden>
+                    </button>
+                    <button id="submit" class="send-btn" title="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="suggestion-chips">
+                <button class="chip" data-query="How to create strong passwords?">🔐 Password Security</button>
+                <button class="chip" data-query="How to identify phishing emails?">🛡️ Phishing Protection</button>
+                <button class="chip" data-query="How to protect against malware?">🦠 Malware Defense</button>
+                <button class="chip" data-query="What is GDPR compliance?">📋 GDPR Guide</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
